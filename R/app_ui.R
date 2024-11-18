@@ -11,7 +11,17 @@ app_ui <- function(request) {
     # Your application UI logic
     fluidPage(
       h1("formulairemaskaret"),
-      selectInput("select1","Choisis un cours",choices = NULL)
+      sidebarPanel(
+        h2("Sélection du cours à modifier"),
+        selectInput("cours", "Choisir un cours :", choices = NULL),
+
+        h2("Modification du cours"),
+        uiOutput("fields_ui"),  # Pour les champs dynamiques
+        actionButton("update", "Appliquer les modifications")
+      ),
+      mainPanel(
+        textOutput("message")  # Pour afficher un message de confirmation
+      )
     )
   )
 }

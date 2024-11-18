@@ -42,6 +42,7 @@ library(RMariaDB)
 
 con <- connect_to_db()
 
+query <- "SELECT * FROM cours"
 cours_data <- dbGetQuery(con,"SELECT * FROM cours")
 ```
 
