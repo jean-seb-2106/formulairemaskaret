@@ -1,17 +1,22 @@
 Package: formulairemaskaret
 Title: formulairemaskaret
 Version: 0.0.0.9000
-Authors@R: person('Jean', 'Sebban', email = 'jean.sebban@insee.fr', role = c('cre', 'aut'))
+Authors@R: 
+    person("Jean", "Sebban", , "jean.sebban@insee.fr", role = c("cre", "aut"))
 Description: Pour saisir des cours existants dans maskaret.
 License: MIT + file LICENSE
 Imports: 
     config (>= 0.3.2),
+    DBI,
+    dotenv,
     golem (>= 0.4.1),
+    RMariaDB,
     shiny (>= 1.8.1.1)
-Encoding: UTF-8
-LazyData: true
-RoxygenNote: 7.2.3
 Suggests: 
     knitr,
     rmarkdown
-VignetteBuilder: knitr
+VignetteBuilder: 
+    knitr
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3

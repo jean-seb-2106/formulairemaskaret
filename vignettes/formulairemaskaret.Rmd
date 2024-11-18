@@ -16,4 +16,32 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(formulairemaskaret)
+library(dotenv)
+library(DBI)
+library(RMariaDB)
 ```
+
+```{r}
+#Connexion à la BDD maskaret
+
+# connect_to_db <- function(){
+# dotenv::load_dot_env("C:/Users/XX9JQZ/Documents/packagesR/formulairemaskaret/.env")
+# db_host <- Sys.getenv("DB_HOST")
+# db_user <- Sys.getenv("DB_USER")
+# db_name <- Sys.getenv("DB_NAME")
+# 
+# DBI::dbConnect(
+#     MariaDB(),
+#     dbname = db_name,
+#     host = db_host,
+#     user = db_user,
+#     password = ""
+# )
+# 
+# }
+
+con <- connect_to_db()
+
+cours_data <- dbGetQuery(con,"SELECT * FROM cours")
+```
+
